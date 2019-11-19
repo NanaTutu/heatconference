@@ -5,13 +5,13 @@ function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     // var myLatlng = new google.maps.LatLng(40.71751, -73.990922);
-    var myLatlng = new google.maps.LatLng(5.5959388, -0.1898735);
+    var myLatlng = new google.maps.LatLng(5.595887,-0.1874812);
     // 39.399872
     // -8.224454
     
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
-        zoom: 17,
+        zoom: 16,
 
         // The latitude and longitude to center the map (always required)
         center: myLatlng,
@@ -42,22 +42,18 @@ function init() {
 
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
-    
-    var addresses = [];
+    var latlng = new google.maps.LatLng(5.595887,-0.1874812);
+    var marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        icon: 'images/loc.png'
+    });
 
-    for (var x = 0; x < addresses.length; x++) {
-        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x], null, function (data) {
-            var p = data.results[0].geometry.location
-            var latlng = new google.maps.LatLng(p.lat, p.lng);
-            var marker = google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: 'images/loc.png'
-            });
-            marker.setmap(map); 
-        });
-    } 
+} 
 
 
-}
+
+
 google.maps.event.addDomListener(window, 'load', init);
+
+
