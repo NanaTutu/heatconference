@@ -8231,7 +8231,7 @@ h1, h2, h3, h4, h5,
 .hero {
   position: relative; }
   .hero:after {
-    width: 100px;
+    width: 200px;
     height: 100px;
     display: block;
     position: absolute;
@@ -8243,6 +8243,17 @@ h1, h2, h3, h4, h5,
     z-index: -1;
     background:  #007bff ;
     opacity: 1; }
+
+.hero .expd{
+  position: absolute;
+  color: white;
+  z-index: 1;
+  left: 120px;
+  top: 50px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
     @media (max-width: 1199.98px) {
       .hero:after {
         display: none; } }
@@ -8264,7 +8275,7 @@ h1, h2, h3, h4, h5,
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 10px;
-    font-size: 12px;
+    font-size: 11px;
     z-index: 1;
     color: rgba(0, 0, 0, 0.3); }
     .hero h3.vr span {
